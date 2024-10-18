@@ -1,0 +1,11 @@
+provider "aws"{
+region = "ap-south-1"
+}
+
+resource "aws_s3_bucket" "s3b1" {
+bucket = "sumans3"
+}
+resource "aws_s3_bucket_acl "s3acl" {
+bucket = aws_s3_bucket.s3b1.id
+acl = "public read"
+}
