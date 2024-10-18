@@ -1,0 +1,12 @@
+provider "aws"{
+region = "ap-south-1"
+}
+
+resource "aws_instance" "sumanec2" {
+  ami           = "ami-06aa3f7caf3a30282"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "ec2_test"
+  }
+}
